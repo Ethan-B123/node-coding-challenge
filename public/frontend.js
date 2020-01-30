@@ -52,12 +52,11 @@ async function fetchMe() {
 	data = await res.json();
 	if (data.err) {
 		localStorage.removeItem('jwtString');
-		return false;
 	} else {
 		const jwtString = res.headers.get('Authorization');
 		localStorage.setItem('jwtString', jwtString);
-		return true;
 	}
+	updateMeText();
 }
 
 function logout() {
