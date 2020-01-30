@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Node Challenge</title>
+		<script src="/jwt-decode.js"></script>
+		<script src="/frontend.js"></script>
+	</head>
+	<body>
+		<h1>Node Challenge</h1>
+
+		<form id="sign-up">
+			<label for="sign-up-name">sign up<br /></label>
+			<input type="text" name="name" placeholder="name" />
+			<input type="text" name="email" placeholder="email" />
+			<input type="password" name="password" placeholder="password" />
+			<button type="submit">submit</button>
+			<p class="warning" style="color: red;"></p>
+		</form>
+		<hr />
+
+		<form id="sign-in">
+			<label for="sign-up-name">sign in<br /></label>
+			<input type="text" name="name" placeholder="name" />
+			<input type="text" name="email" placeholder="email" />
+			<input type="password" name="password" placeholder="password" />
+			<button type="submit">submit</button>
+			<p class="warning" style="color: red;"></p>
+		</form>
+		<hr />
+
+		<p id="me" style="font-family: monospace;"></p>
+		<button id="me-btn">ME</button>
+		<button id="logout-btn">logout</button>
+	</body>
+</html>

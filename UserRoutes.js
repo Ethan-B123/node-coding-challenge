@@ -24,8 +24,8 @@ const routerWithUserModel = User => {
 			const passwordDG = await hash(password, salt);
 			await User.create({ name, email, passwordDG });
 		} catch (e) {
-			res.status(422).send({
-				err: 'name, email, or password invalid'
+			return res.status(422).send({
+				err: 'name, email, or password taken or invalid'
 			});
 		}
 
