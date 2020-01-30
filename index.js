@@ -6,7 +6,7 @@ const { modelWithSequelize } = require('./UserModel');
 const { routerWithUserModel } = require('./UserRoutes');
 const Sequelize = require('sequelize');
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const sequelize = new Sequelize('sqlite:./db');
 const UserModel = modelWithSequelize(sequelize);
