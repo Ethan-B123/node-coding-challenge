@@ -62,9 +62,6 @@ const routerWithUserModel = User => {
 	router.get('/me', (req, res) => {
 		const { user } = req;
 		if (user) {
-			const payload = { ...user };
-			delete payload.iat;
-			res.set('Authorization', jwt.sign(payload, secretKey));
 			res.json(user);
 		} else {
 			res.status(401).send({
