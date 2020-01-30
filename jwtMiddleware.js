@@ -7,12 +7,12 @@ const checkJwt = async (req, res, next) => {
 
 	jwt.verify(jwtString, secretKey, (err, jwtData) => {
 		if (err) {
-			req.jwtData = false;
+			req.user = false;
 		} else {
 			const newJwt = JSON.parse(JSON.stringify(jwtData));
 			delete newJwt.iat;
 			res.set('Authorization', jwt.sign(newJwt, secretKey));
-			req.jwtData = jwtData;
+			req.user = jwtData;
 		}
 		next();
 	});

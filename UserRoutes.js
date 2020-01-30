@@ -60,9 +60,9 @@ const routerWithUserModel = User => {
 	});
 
 	router.get('/me', (req, res) => {
-		const { jwtData } = req;
-		if (jwtData) {
-			res.json(jwtData);
+		const { user } = req;
+		if (user) {
+			res.json(user);
 		} else {
 			res.status(401).send({
 				err: 'not signed in'
