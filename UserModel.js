@@ -5,11 +5,24 @@ const modelWithSequelize = sequelize => {
 	class User extends Model {}
 	User.init(
 		{
-			name: DataTypes.STRING,
-			email: DataTypes.STRING,
-			passwordDG: DataTypes.STRING
+			name: { allowNull: false, type: DataTypes.STRING },
+			email: { allowNull: false, type: DataTypes.STRING },
+			passwordDG: { allowNull: false, type: DataTypes.STRING }
 		},
-		{ sequelize, modelName: 'user' }
+		{
+			sequelize,
+			modelName: 'user',
+			indexes: [
+				{
+					unique: true,
+					fields: ['name']
+				},
+				{
+					unique: true,
+					fields: ['email']
+				}
+			]
+		}
 	);
 	return User;
 };
